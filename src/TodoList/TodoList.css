@@ -1,0 +1,24 @@
+.todos {
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.todo_item {
+    width: 300px;
+    height: 40px;
+    border: solid 1px black;
+    margin-bottom: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo_item * {
+    margin: 0;
+    padding: 0;
+}
