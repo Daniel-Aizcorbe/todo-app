@@ -5,7 +5,7 @@ function CreateTodoButton() {
 
     return (
         <button className="create_todo_btn">
-            X
+            +
         </button>
     );
 }
