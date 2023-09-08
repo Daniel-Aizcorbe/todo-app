@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { createContext, useState } from "react";
 import { useLocalStorage } from "./LocalStorage";
 
-const TodoContext = React.createContext({});
+const TodoContext = createContext({});
 
 function TodoProvider({ children }) {
 
@@ -13,7 +13,6 @@ function TodoProvider({ children }) {
     ];
 
     const [todos, setTodos] = useLocalStorage("TODOS_V1",todoArray);
-    const [todoSearched, setTodoSearched] = useState("");
 
     const toggleComplete = (text) => {
         const newTodos = [...todos];
@@ -26,8 +25,6 @@ function TodoProvider({ children }) {
         {
             todos,
             setTodos,
-            todoSearched,
-            setTodoSearched,
             toggleComplete,
         }
     }>

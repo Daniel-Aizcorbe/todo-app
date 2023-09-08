@@ -1,16 +1,18 @@
-import React, { useContext } from "react";
 import "./TodoList.css";
-import { TodoContext } from "../Contexts";
 import { TodoItem } from "./TodoItem";
+import { useContext } from "react";
+import { TodoContext } from "../Contexts";
 
 
-function TodoList() {
+function TodoList({searchedTodo}) {
 
     const {todos} = useContext(TodoContext);
 
+    const myTodos = todos.filter(t => t.text.includes(searchedTodo));
+
     return (
         <ul className="todos">
-            {todos.map(todo => TodoItem(todo))}
+            {myTodos.map(todo => TodoItem(todo))}
         </ul>
     );
 }
